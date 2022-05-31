@@ -1,0 +1,7 @@
+node_modules
+.history
+public
+dist
+.umi
+mock
+chart

@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi generate tmp",
+    "lint": "umi g tmp && npm run lint:js && npm run lint:style && npm run lint:prettier && npm run tsc",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint:prettier": "prettier -c --write \"src/**/*\" --end-of-line auto",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "prettier": "prettier -c --write \"src/**/*\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "deps": "yarn upgrade-interactive --latest"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "fabric verify-commit"
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "antd-mobile": "^5.13.0",
+    "hox": "^1.1.6",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "umi": "^3.5.24"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/fabric": "^2.10.2",
+    "@umijs/test": "^3.5.24",
+    "eruda": "^2.4.1",
+    "lint-staged": "^12.4.1",
+    "postcss-px-to-viewport": "^1.1.1",
+    "prettier": "^2.6.2",
+    "stylelint": "13.0.0",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  }
+}
