@@ -16,6 +16,9 @@ export default defineConfig({
       replace: true, // 是否转换后直接更换属性值
     }),
   ],
+  dva: false,
+  hash: true,
+  ignoreMomentLocale: true,
   chainWebpack: (config, { webpack }) => {
     config.module.rule('mjs-rule').test(/.m?js/).resolve.set('fullySpecified', false)
   },

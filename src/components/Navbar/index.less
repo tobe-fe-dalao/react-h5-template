@@ -1,0 +1,29 @@
+@navBarHeight: 46px;
+
+.navBar {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: @navBarHeight;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fff;
+  .navBarLeft {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+  .navBarTitle {
+    font-size: 17px;
+  }
+  & + div {
+    padding-top: @navBarHeight;
+    // 页面中有固定在顶部的样式都要在这个重新设置top值，否则pc端企微上会被显示的头部覆盖
+    > iframe {
+      min-height: calc(100vh - @navBarHeight);
+    }
+  }
+}
