@@ -33,7 +33,7 @@
     ]
   },
   "dependencies": {
-    "antd-mobile": "^5.21.0",
+    "antd-mobile": "^5.24.0",
     "antd-mobile-icons": "^0.3.0",
     "hox": "^1.1.6",
     "react": "^17.0.2",
@@ -45,7 +45,7 @@
     "@types/react": "^17.0.44",
     "@types/react-dom": "^17.0.14",
     "@umijs/fabric": "^3.0.0",
-    "@umijs/preset-react": "^2.1.4",
+    "@umijs/preset-react": "^2.1.6",
     "@umijs/test": "^3.5.23",
     "eruda": "^2.5.0",
     "lint-staged": "^13.0.3",
